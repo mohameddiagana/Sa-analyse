@@ -1,4 +1,4 @@
-name: construction d'un projet
+name: Construction d'un projet
 
 on:
   push:
@@ -6,20 +6,18 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-      - name: Telechargement des ressources
+      - name: Téléchargement des ressources
         uses: actions/checkout@v4
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - steps:
-          - name: Build
-            run: mvn clean install
-       # run: mvn clean install
-        #uses: actions/checkout@v4
+
+      - name: Build
+        run: mvn clean install
