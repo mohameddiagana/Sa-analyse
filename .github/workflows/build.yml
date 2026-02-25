@@ -1,8 +1,7 @@
 name: construction d'un projet
-
 on:
   push:
-    branches: [ "main" ,"Devops" ]
+    branches: [ "main"  ]
 
 jobs:
   build:
