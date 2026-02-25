@@ -18,7 +18,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build
-        run: mvn -Dmaven.tests.skip=true -B package --file pom.xml
+      - steps:
+          - name: Build
+            run: mvn clean install
        # run: mvn clean install
         #uses: actions/checkout@v4
