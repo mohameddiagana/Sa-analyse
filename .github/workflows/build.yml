@@ -3,8 +3,21 @@ name: Construction d'un projet
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
+  create-folder:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: creation de dossier
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: whoami
   build:
     runs-on: ubuntu-latest
 
